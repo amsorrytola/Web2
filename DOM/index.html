@@ -1,7 +1,16 @@
 <html>
+    <script>
+        function populationDiv(){
+            const first = document.getElementById("first").value
+            const second = document.getElementById("second").value
+            document.getElementById("finalsum").innerHTML = parseInt(first) + parseInt(second)
+
+        }
+    </script>
     <body>
-        <input type="text" placeholder="First Number"></input><br>
-        <input type="text" placeholder="Second Number"></input><br>
-        <button>Add</button>
+        <input type="text" placeholder="First Number" id="first"></input><br>
+        <input type="text" placeholder="Second Number" id="second"></input><br>
+        <button onclick="populationDiv()">Add</button>
+        <div id="finalsum"></div>
     </body>
 </html>
