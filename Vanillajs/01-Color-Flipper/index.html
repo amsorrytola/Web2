@@ -1,0 +1,26 @@
+<html>
+    <script>
+        function changeColor(){
+            const randomcolor = Math.floor(Math.random()*16777215).toString(16);
+            document.getElementById("maindiv").style.backgroundColor = '#' + randomcolor;
+            document.getElementById("colorname").innerHTML = '<h1>Background Color: #'+randomcolor+'\n        </h1>';
+
+
+        }
+    </script>
+    <body style="display: flex; flex-direction: column; align-items: center;">
+        <nav style="display: flex; justify-content: space-between; height: 3rem;">
+            <div>Color Flipper</div>
+            <div>
+                <h3>Simple</h3>
+                <h3>Hex</h3>
+            </div>
+        </nav>
+        <div id="maindiv" style="display: flex; flex-direction: column; align-items: center;height: 38rem ; background-color: blue;">
+        <div id="colorname"><h1>Background Color: #0000FF
+        </h1></div>
+        <div><button onclick="changeColor()">Click Me</button></div>
+        </div>
+        <footer style="text-align: center;">Color Flipper</footer>
+    </body>
+</html>
