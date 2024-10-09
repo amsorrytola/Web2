@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Counter</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f3f3f3, #e2e2e2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        #counter {
+            font-size: 4rem;
+            margin: 20px 0;
+            color: black;
+            transition: color 0.5s, transform 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            background-color: #315145;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #2b463e;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #counter.positive {
+            color: green !important;
+            animation: pulse 0.5s ease-in-out;
+        }
+
+        #counter.negative {
+            color: red !important;
+            animation: pulse 0.5s ease-in-out;
+        }
+
+        #counter.neutral {
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Interactive Counter</h1>
+        <h1><div id="counter" class="neutral">0</div></h1>
+        <div class="buttons-container">
+            <button onclick="decreaseCounter()">DECREASE</button>
+            <button onclick="resetCounter()">RESET</button>
+            <button onclick="increaseCounter()">INCREASE</button>
+        </div>
+    </div>
+
+    <script>
+        const counterElement = document.getElementById("counter");
+
+        function decreaseCounter() {
+            updateCounter(parseInt(counterElement.innerHTML) - 1);
+        }
+
+        function resetCounter() {
+            updateCounter(0);
+        }
+
+        function increaseCounter() {
+            updateCounter(parseInt(counterElement.innerHTML) + 1);
+        }
+
+        function updateCounter(value) {
+            counterElement.innerHTML = value;
+            setCounterColor(value);
+        }
+
+        function setCounterColor(value) {
+            //counterElement.classList.remove("positive", "negative", "neutral");
+
+            if (value > 0) {
+                counterElement.className="positive";
+            } else if (value < 0) {
+                counterElement.className="negative";
+            } else {
+                counterElement.className="neutral";
+            }
+        }
+    </script>
+
+</body>
+</html>
