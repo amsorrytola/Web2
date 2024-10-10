@@ -102,44 +102,50 @@
         <h1>Interactive Counter</h1>
         <h1><div id="counter" class="neutral">0</div></h1>
         <div class="buttons-container">
-            <button onclick="decreaseCounter()">DECREASE</button>
-            <button onclick="resetCounter()">RESET</button>
-            <button onclick="increaseCounter()">INCREASE</button>
+            <button >DECREASE</button>
+            <button >RESET</button>
+            <button >INCREASE</button>
         </div>
     </div>
 
     <script>
         const counterElement = document.getElementById("counter");
-
+    
         function decreaseCounter() {
             updateCounter(parseInt(counterElement.innerHTML) - 1);
         }
-
+    
         function resetCounter() {
             updateCounter(0);
         }
-
+    
         function increaseCounter() {
             updateCounter(parseInt(counterElement.innerHTML) + 1);
         }
-
+    
         function updateCounter(value) {
             counterElement.innerHTML = value;
             setCounterColor(value);
         }
-
+    
         function setCounterColor(value) {
-            //counterElement.classList.remove("positive", "negative", "neutral");
-
+            counterElement.classList.remove("positive", "negative", "neutral");
+    
             if (value > 0) {
-                counterElement.className="positive";
+                counterElement.classList.add("positive");
             } else if (value < 0) {
-                counterElement.className="negative";
+                counterElement.classList.add("negative");
             } else {
-                counterElement.className="neutral";
+                counterElement.classList.add("neutral");
             }
         }
+    
+        // Attach event listeners to buttons
+        document.querySelector('button:nth-child(1)').addEventListener('click', decreaseCounter);
+        document.querySelector('button:nth-child(2)').addEventListener('click', resetCounter);
+        document.querySelector('button:nth-child(3)').addEventListener('click', increaseCounter);
     </script>
+    
 
 </body>
 </html>
