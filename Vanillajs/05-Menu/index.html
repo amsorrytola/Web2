@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Our Menu</h1>
+        <div class="btns">
+            <button class="btn active" data-filter="All">All</button>
+            <button class="btn" data-filter="Breakfast">Breakfast</button>
+            <button class="btn" data-filter="Lunch">Lunch</button>
+            <button class="btn" data-filter="Shakes">Shakes</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-container">
+            <div class="menu menu-All active"></div>
+            <div class="menu menu-Breakfast"></div>
+            <div class="menu menu-Lunch"></div>
+            <div class="menu menu-Shakes"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
