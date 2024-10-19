@@ -1,0 +1,81 @@
+/* General reset for margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+/* Container for the counter */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px 40px;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Styling for count text */
+p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 1.2px;
+  color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+p:hover {
+  transform: scale(1.1);
+}
+
+/* Button styles */
+button {
+  background-color: #fff;
+  /* color: #ff7e5f; */
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #ff7e5f;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeIn 1s ease-in-out;
+}
